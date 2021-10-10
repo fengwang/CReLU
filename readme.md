@@ -6,11 +6,13 @@ CReLU layer with TensorFlow2.
 
 ### Example usage
 
-A simple model applying CReLU activation to an input layer, with save/load function:
+A simple model applying CReLU activation to an input layer, with save/load function
 
 ```python
     from tensorflow.keras.layers import Input
     from tensorflow.keras.models import Model, load_model
+    from crelu import CReLU
+
     ip = Input(shape=(3, 3, 6))
     x = CReLU()(ip)
     model = Model(ip, x)
@@ -22,7 +24,7 @@ A simple model applying CReLU activation to an input layer, with save/load funct
     print( 'new model loaded successfully' )
 ```
 
-produces output of
+produces
 
 ```
 Model: "model"
@@ -43,7 +45,7 @@ new model loaded successfully
 
 ### Note
 
-Before loading a model designed with `CReLU`, make sure `from crelu import CReLU` has been executed.
+Before loading a model with `CReLU` layer(s), make sure `from crelu import CReLU` has been executed.
 
 ### Reference
 

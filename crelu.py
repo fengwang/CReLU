@@ -32,7 +32,9 @@ class CReLU(Layer):
         return dict(list(base_config.items()) + list(config.items()))
 
     def compute_output_shape(self, input_shape):
-        return input_shape
+        output_shape = input_shape
+        output_shape[self.axis] *= 2
+        return output_shape
 
 get_custom_objects().update({'CReLU': CReLU})
 
