@@ -21,7 +21,7 @@ class CReLU(Layer):
         self.axis = axis
 
     def build(self, input_shape):
-        pass
+        super(CReLU, self).build(input_shape)
 
     def call(self, inputs, **kwargs):
         return crelu( inputs, self.axis )
@@ -34,7 +34,7 @@ class CReLU(Layer):
     def compute_output_shape(self, input_shape):
         output_shape = input_shape
         output_shape[self.axis] *= 2
-        return output_shape
+        return tuple(output_shape)
 
 get_custom_objects().update({'CReLU': CReLU})
 
